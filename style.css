@@ -190,6 +190,7 @@ a {
   padding: 1rem;
   margin-right: 1.5rem;
   margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 .cards-container {
@@ -233,17 +234,75 @@ a {
 
 .album {
   width: 25%;
-  /* background-color: pink; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin-left: 1rem;
+}
+
+#album-image {
+  border-radius: 0.8rem;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+#album-title {
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+#album-title:hover {
+  text-decoration: underline;
+}
+
+.album-artists {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.album-artists a {
+  opacity: 0.7;
+}
+
+.album-artists a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+#add-icon {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#add-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 .player {
   width: 50%;
-  /* background-color: orange; */
-}
-
-.controls {
-  width: 25%;
-  /* background-color: green; */
 }
 
 .player-control {
@@ -256,6 +315,11 @@ a {
   height: 1rem;
   margin-right: 1.75rem;
   opacity: 0.7;
+  cursor: pointer;
+}
+
+.player-control-icon:hover {
+  opacity: 1;
 }
 
 .playback-bar {
@@ -273,12 +337,16 @@ a {
 .progress-bar {
   width: 70%;
   appearance: none;
-  background-color: transparent;
+  background-color: #ddd;
   cursor: pointer;
+  margin: 0 0.5rem 0 0.5rem;
+  border-radius: 100px;
+  height: 0.22rem;
+  outline: none;
 }
 
 .progress-bar::-webkit-slider-runnable-track {
-  background-color: #ddd;
+  background-color: transparent;
   border-radius: 100px;
   height: 0.22rem;
 }
@@ -290,9 +358,77 @@ a {
   background-color: #1bd760;
   border-radius: 50%;
   margin-top: -6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border: none;
+}
+
+.progress-bar:hover::-webkit-slider-thumb {
+  opacity: 1;
 }
 
 .total-time {
   font-size: 0.75rem;
   opacity: 0.8;
+}
+
+.controls {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls span {
+  font-size: 1.35rem;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.controls span:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+#volume-slider {
+  width: 75%;
+  appearance: none;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 100px;
+  height: 0.22rem;
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-runnable-track {
+  background-color: transparent;
+  border-radius: 100px;
+  height: 0.22rem;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 1rem;
+  width: 1rem;
+  background-color: #1bd760;
+  border-radius: 50%;
+  margin-top: -6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border: none;
+}
+
+#volume-slider:hover::-webkit-slider-thumb {
+  opacity: 1;
 }
