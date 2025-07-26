@@ -40,5 +40,5 @@ This project is for educational purposes only. All copyrights belong to **Spotif
 
 ## 🔗 Live Demo
 
-[View Live](#) <!-- Add your hosted site link here if available -->
+[View Live](https://aniprogramer.github.io/spotify-homepage-clone/) <!-- Add your hosted site link here if available -->
 
